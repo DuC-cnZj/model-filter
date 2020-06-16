@@ -32,21 +32,21 @@ class User extends Model
 
 控制器中使用
 ```php
-User::filter($context)->get();
+User::filter($request)->get();
 or
-User::filter(new UserFilter($context))->get();
+User::filter(new UserFilter($request))->get();
 or
 User::filter(['name' => 'duc'])->get();
 ```
 
 筛选filter参数
 ```php
-User::filter($context, ['name'])->get();
+User::filter($request, ['name'])->get();
 ```
 
 带上前缀
 ```php
-User::filter($context, ['name'], 'user')->get();
+User::filter($request, ['name'], 'user')->get();
 ```
 
 自定义入参过滤规则
