@@ -1,0 +1,10 @@
+<?php
+
+namespace DummyNamespace;
+
+use DucCnzj\ModelFilter\Filter as BaseFilter;
+
+class DummyClass extends BaseFilter
+{
+     protected $filters = [];
+}
