@@ -1,6 +1,7 @@
 <h1 align="center"> model filter </h1>
 
 [![Build Status](https://github.com/DuC-cnZj/model-filter/workflows/Tests/badge.svg)](https://github.com/DuC-cnZj/model-filter/actions)
+[![codecov](https://codecov.io/gh/DuC-cnZj/model-filter/branch/master/graph/badge.svg)](https://codecov.io/gh/DuC-cnZj/model-filter)
 
 ## Installing
 
