@@ -1,0 +1,24 @@
+name: Tests
+on: [push, pull_request]
+jobs:
+  build:
+    strategy:
+      matrix:
+        operating-system: [ubuntu-latest, windows-latest, macOS-latest]
+        php-versions: [7.4, 7.3, 7.2]
+    runs-on: ${{ matrix.operating-system }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: Set up php and composer
+        uses: shivammathur/setup-php@2.3.0
+        with:
+          php-version: ${{ matrix.php-versions }}        
+          extensions: mbstring, intl
+          ini-values: post_max_size=256M, short_open_tag=On
+          coverage: xdebug  
+          tools: php-cs-fixer, phpunit
+      - name: Install dependencies
+        run: composer install --no-progress --no-suggest --prefer-dist
+      - name: Test with phpunit
+        run: vendor/bin/phpunit --coverage-clover build/logs/clover.xml --coverage-text
