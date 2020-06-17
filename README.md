@@ -1,5 +1,6 @@
 <h1 align="center"> model filter </h1>
 
+[![Build Status](https://github.com/DuC-cnZj/model-filter/workflows/Tests/badge.svg)](https://github.com/DuC-cnZj/model-filter/actions)
 
 ## Installing
 
