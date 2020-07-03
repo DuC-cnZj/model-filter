@@ -23,6 +23,7 @@ class HigherOrderWhenProxy
 
     public function __call($method, $parameters)
     {
+//        dd($this->condition);
         return $this->condition
             ? $this->target->{$method}(...$parameters)
             : $this->target;

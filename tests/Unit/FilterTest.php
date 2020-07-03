@@ -192,4 +192,19 @@ class FilterTest extends TestCase
         $m->shouldHaveReceived('where', ['name', 'duc']);
         $m->shouldHaveReceived('where', ['age', false]);
     }
+
+    public function test8()
+    {
+        $f = new TestModelFilter([]);
+        $this->assertSame($f->only(null), $f);
+    }
+
+    public function test9()
+    {
+        $f = new TestModelFilter([]);
+        $res = $f->when(true, function ($filter) use ($f) {
+            $this->assertSame($f, $filter);
+        });
+        $this->assertSame($f, $res);
+    }
 }
